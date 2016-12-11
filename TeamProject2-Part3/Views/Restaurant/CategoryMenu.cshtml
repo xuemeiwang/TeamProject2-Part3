@@ -1,0 +1,13 @@
+﻿@using TeamProject2_Part3.Models
+@model IEnumerable<Category>
+
+<table id="categories" class="table">
+    <tr>
+        @foreach (var category in Model)
+        {
+            <td>
+                @Html.ActionLink(category.Name, "Browse", "Restaurant", new { Category = category.Name }, null)
+            </td>
+        }
+    </tr>
+</table>

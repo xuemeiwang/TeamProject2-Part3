@@ -11,13 +11,13 @@ namespace TeamProject2_Part3.Controllers
     {
         private RestaurantContext db = new RestaurantContext();
 
-        // GET: Restaurant
+        // GET: /Restaurant
         public ActionResult Index()
         {
             return View(db.Categories.ToList());
         }
 
-        // GET: Restaurant/Browse?category=Soup
+        // GET: /Restaurant/Browse?category=Soup
         public ActionResult Browse(string category)
         {
             if (category == null)
@@ -29,11 +29,20 @@ namespace TeamProject2_Part3.Controllers
             return View(categoryModel);
         }
 
-        // GET: Restaurant/Details/1
+        // GET: /Restaurant/Details/1
         public ActionResult Details(int? id = 1)
         {
             Item item = db.Items.Find(id);
             return View(item);
+        }
+
+        //
+        // GET: /Restaurant/CategoryMenu
+        [ChildActionOnly]
+        public ActionResult CategoryMenu()
+        {
+            var categories = db.Categories.ToList();
+            return PartialView(categories);
         }
     }
 }

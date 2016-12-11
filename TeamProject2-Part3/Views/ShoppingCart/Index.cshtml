@@ -29,7 +29,7 @@
     {
         <tr id="row-@item.RecordId">
             <td>
-                @Html.ActionLink(item.Item.Title, "Details", "Store", new { id = item.ItemId }, null)
+                @Html.ActionLink(item.Item.Title, "Details", "Restaurant", new { id = item.ItemId }, null)
             </td>
             <td id="item-count-@item.RecordId">
                 @item.Count
@@ -54,5 +54,5 @@
     </tr>
 </table>
 <p>
-    @Html.ActionLink("<<Continue shopping", "Index", "Home")
+    @Html.ActionLink("<<Continue Shopping", "Index", "Home")
 </p>

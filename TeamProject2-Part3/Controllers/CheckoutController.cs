@@ -7,6 +7,7 @@ using TeamProject2_Part3.Models;
 
 namespace TeamProject2_Part3.Controllers
 {
+    [Authorize]
     public class CheckoutController : Controller
     {
         RestaurantContext db = new RestaurantContext();

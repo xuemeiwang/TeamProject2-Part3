@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
 </head>
 <body style="font-family:'Indie Flower',cursive;font-size:20px">
-    <div class="navbar navbar-inverse navbar-fixed-top" >
+    <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -20,7 +20,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="@Url.Action("Index","Home")"><img src="~/Assets/images/logo.png"/> </a>
+                <a class="navbar-brand" href="@Url.Action("Index","Home")"><img src="~/Assets/images/logo.png" /> </a>
             </div>
             <div class="navbar-collapse collapse" style="font-family:'tangerine',serif;font-size:20px">
                 <ul class="nav navbar-nav">
@@ -32,22 +32,24 @@
             </div>
         </div>
     </div>
-      
-        <div class="container body-content" style="background-image: url('../../Assets/images/background.jpg'); ">
-            <div class="jumbotron" style="background-image:url('/Assets/images/bannerjpg.jpg');background-size:cover;background-repeat:no-repeat;">
-                <h1>Welcome to</h1>
-                <p>PS Restaurant</p>
-            </div>  
-                  @RenderBody()
-            <hr />
-            <footer>
-                <p>&copy; @DateTime.Now.Year - PS Restaurant</p>
-            </footer>
+    <div class="container body-content" style="background-image: url('../../Assets/images/background.jpg'); ">
+        <div class="jumbotron" style="background-image:url('/Assets/images/bannerjpg.jpg');background-size:cover;background-repeat:no-repeat;">
+            <h1>Welcome to</h1>
+            <p>PS Restaurant</p>
         </div>
 
-        @Scripts.Render("~/bundles/jquery")
-        @Scripts.Render("~/bundles/bootstrap")
-        @Scripts.Render("~/bundles/app")
-        @RenderSection("scripts", required: false)
+        <h2>@{Html.RenderAction("CategoryMenu", "Restaurant");}</h2>
+
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - PS Restaurant</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/app")
+    @RenderSection("scripts", required: false)
 </body>
 </html>

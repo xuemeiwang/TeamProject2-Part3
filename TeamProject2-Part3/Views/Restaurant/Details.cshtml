@@ -44,5 +44,23 @@
 </div>
 
 <p>
-    @Html.ActionLink("Back to List", "Index")
+    @switch (Model.CategoryId)
+    {
+        case 1:
+            @Html.ActionLink("Back to List", "Browse", new { category = "Soup" })
+            break;
+        case 2:
+            @Html.ActionLink("Back to List", "Browse", new { category = "Appetizer" })
+            break;
+        case 3:
+            @Html.ActionLink("Back to List", "Browse", new { category = "Entree" })
+            break;
+        case 4:
+            @Html.ActionLink("Back to List", "Browse", new { category = "Dim Sum" })
+            break;
+        default:
+            @Html.ActionLink("Back to List", "Browse", new { category = "Soup" })
+            break;
+    }
+    
 </p>
